@@ -35,10 +35,9 @@ int main(int argc, char *argv[])
 		{
 			execute(content, &stack, counter, monty_file);
 		}
-		free(content);
 	}
+	free(content);
 	freeStack(stack);
 	fclose(monty_file);
 	return (0);
 }
-
