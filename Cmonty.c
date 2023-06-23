@@ -10,7 +10,8 @@ int main(int argc, char *argv[])
 {
 	FILE *monty_file;
 	char *content = NULL;
-	size_t size = 0, counter = 0, read_line = 1;
+	size_t size = 0, counter = 0;
+	int read_line = 0;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
 		read_line = getline(&content, &size, monty_file);
 		montyData.content = content;
 		counter++;
-		if (read_line != 0)
+		if (read_line != -1)
 		{
 			execute(content, &stack, counter, monty_file);
 		}
